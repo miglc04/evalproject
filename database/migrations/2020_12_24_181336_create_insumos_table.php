@@ -16,9 +16,9 @@ class CreateInsumosTable extends Migration
         Schema::create('insumos', function (Blueprint $table) {
             $table->id();
             $table->char('descripcion', 100);
-            $table->unsignedInteger('necesarios');
-            $table->unsignedInteger('recibidos');
-            $table->boolean('enviado');
+            $table->unsignedInteger('necesarios')->default(0);
+            $table->unsignedInteger('recibidos')->default(0);
+            $table->boolean('enviado')->default(false);
             $table->unsignedInteger('sucursal_id');
             $table->timestamps();
         });
