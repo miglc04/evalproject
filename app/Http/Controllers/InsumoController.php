@@ -66,4 +66,25 @@ class InsumoController extends Controller
     {
         return Insumo::find($id)->delete();
     }
+
+    /**
+     * Registra los insumos recibidos y regresa la conciliación.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function conciliar(Request $request, $id)
+    {
+        $insumo = Insumo::find($id);
+        $insumo->recibidos = $request->recibidos;
+        $insumo->save();
+
+        /* [+] Sobrantes
+         * [-] Faltantes
+         */
+        return response()->json([
+            'conciliacion' => $insumo->recibidos - $insumo->necesarios
+        ]);
+    }
 }

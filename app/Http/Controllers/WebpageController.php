@@ -50,9 +50,9 @@ class WebpageController extends Controller
      */
     public function conciliarSolicitudes()
     {
-        $solicitudes = Insumo::paginate(15);
+        $insumos = Insumo::with('sucursal')->where('enviado', true)->paginate(10);
 
-        return view('conciliar_solicitudes', compact('solicitudes'));
+        return view('conciliar_solicitudes', compact('insumos'));
     }
 
 }
