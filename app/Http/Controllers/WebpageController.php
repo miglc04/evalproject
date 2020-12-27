@@ -38,9 +38,9 @@ class WebpageController extends Controller
      */
     public function enviarSolicitudes()
     {
-        $solicitudes = Insumo::with('sucursal')->paginate(15);
+        $insumos = Insumo::with('sucursal')->where('enviado', false)->paginate(10);
 
-        return view('enviar_solicitudes', compact('solicitudes'));
+        return view('enviar_solicitudes', compact('insumos'));
     }
 
     /**

@@ -48,7 +48,12 @@ class InsumoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return Insumo::where('id', $id)->update([
+            'descripcion' => $request->params['descripcion'],
+            'necesarios' => $request->params['necesarios'],
+            'enviado' => $request->params['enviado'],
+            'sucursal_id' => $request->params['sucursal_id']
+        ]);
     }
 
     /**
