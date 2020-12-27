@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('capturarInsumos') }}">Capturar Insumos</a>
+          <a class="nav-link" href="{{ route('capturarInsumos') }}">Capturar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('enviarSolicitudes') }}">Enviar Solicitudes</a>
+          <a class="nav-link" href="{{ route('enviarSolicitudes') }}">Enviar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('conciliarSolicitudes') }}">Conciliar Solicitudes</a>
+          <a class="nav-link" href="{{ route('conciliarSolicitudes') }}">Conciliar</a>
         </li>
       </ul>
     </div>
