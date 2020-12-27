@@ -14,7 +14,7 @@ class InsumoController extends Controller
      */
     public function index()
     {
-        //
+        return Insumo::with('sucursal')->orderBy('id', 'desc')->paginate(10);
     }
 
     /**
@@ -25,7 +25,7 @@ class InsumoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Insumo::create( $request->params );
     }
 
     /**
@@ -36,7 +36,7 @@ class InsumoController extends Controller
      */
     public function show($id)
     {
-        return Insumo::find($id)->with('sucursal');
+        return Insumo::with('sucursal')->findOrFail($id);
     }
 
     /**
